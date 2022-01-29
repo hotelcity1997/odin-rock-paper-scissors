@@ -1,23 +1,20 @@
-//       computerVictories = (computerVictories + 1)
-
 let playerVictories = 0;
 let computerVictories = 0;
 
 game();
 
 function game() {
-
   playRound();
   playRound();
   playRound();
   playRound();
   playRound();
   if (playerVictories == computerVictories) {
-    alert(`You tied ${playerVictories} - ${computerVictories}!`)
+    alert(`Final score: You tied ${playerVictories} - ${computerVictories}.`)
   } else if (playerVictories > computerVictories) {
-    alert(`You won ${playerVictories} - ${computerVictories}!`)
+    alert(`Final score: You won ${playerVictories} - ${computerVictories}!`)
   } else {
-    alert(`You lost ${computerVictories} - ${playerVictories}!`)  
+    alert(`Final score: You lost ${computerVictories} - ${playerVictories}.`)  
   }
 }
 
@@ -29,17 +26,17 @@ function playRound(playerSelection, computerSelection) {
   playerSelection = prompt("Type rock, paper, or scissors:", '');
   playerSelection = playerSelection.toLowerCase();
   if (playerSelection !== "rock" && playerSelection !== "paper" && playerSelection !== "scissors") {
-         alert("You must type \"rock\", \"paper\", or \"scissors\".");
-         playRound();
-     } else if
-       (playerSelection == computerSelection) {
-       alert("It's a tie. Boring.");
-     } else if
-       (playerSelection == "rock" && computerSelection == "scissors" || playerSelection == "paper" && computerSelection == "rock" || playerSelection == "scissors" && computerSelection == "paper") {
-       alert(`The computer chose ${computerSelection}. Hot damn, you win!`);
-       playerVictories = (playerVictories + 1);
-     } else {
-       alert(`The computer chose ${computerSelection}. You lose. I'm so sorry. So very, very sorry.`);
-       computerVictories = (computerVictories + 1);
-     }
-     }
+    alert(`You entered "${playerSelection}". You must type \"rock\", \"paper\", or \"scissors\".`);
+    playRound();
+  } else if
+    (playerSelection == computerSelection) {
+    alert("It's a tie. Boring.");
+  } else if
+    (playerSelection == "rock" && computerSelection == "scissors" || playerSelection == "paper" && computerSelection == "rock" || playerSelection == "scissors" && computerSelection == "paper") {
+    alert(`The computer chose ${computerSelection}. Hot damn, you win!`);
+    playerVictories = (playerVictories + 1);
+  } else {
+    alert(`The computer chose ${computerSelection}. You lose. I'm so very, very sorry.`);
+    computerVictories = (computerVictories + 1);
+  }
+}
