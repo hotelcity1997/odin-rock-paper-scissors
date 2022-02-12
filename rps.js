@@ -32,7 +32,8 @@ function playRound(playerSelection, computerSelection) {
     (playerSelection == computerSelection) {
     alert("It's a tie. Boring.");
   } else if
-    (playerSelection == "rock" && computerSelection == "scissors" || playerSelection == "paper" && computerSelection == "rock" || playerSelection == "scissors" && computerSelection == "paper") {
+    (playerSelection == "rock" && computerSelection == "scissors" || playerSelection == "paper" &&
+        computerSelection == "rock" ||playerSelection == "scissors" && computerSelection == "paper") {
     alert(`The computer chose ${computerSelection}. Hot damn, you win!`);
     playerVictories = (playerVictories + 1);
   } else {
@@ -40,3 +41,4 @@ function playRound(playerSelection, computerSelection) {
     computerVictories = (computerVictories + 1);
   }
 }
+
